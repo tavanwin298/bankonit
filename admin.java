@@ -1,10 +1,6 @@
-import java.io.Serializable;
-
-public class Admin extends User implements Serializable {
-
+public class Admin extends User {
     public Admin() {
-        this.userName = "admin";
-        this.PIN = "0000";
+        super("admin", "0000"); // Default credentials
     }
 
     @Override
@@ -18,11 +14,10 @@ public class Admin extends User implements Serializable {
 
     @Override
     public void start() {
-        // This method is intentionally left blank. The Bank class handles admin interactions.
+        // Empty as per instructions
     }
 
-    @Override
     public String getReport() {
-        return "Admin: " + userName + ", PIN: " + PIN;
+        return "Admin: " + getUserName();
     }
 }
